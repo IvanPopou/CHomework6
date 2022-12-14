@@ -13,14 +13,19 @@ int Prompt(string message)
     return Convert.ToInt32(Console.ReadLine());
 }
 
-int[] angle = {Prompt("Введите k1"), Prompt("Введите k2")};
-int[] offset = {Prompt("Введите b1"), Prompt("Введите b2")};
+int[] angle =  {Prompt("Введите k1"), 
+                Prompt("Введите k2")};
+int[] offset = {Prompt("Введите b1"), 
+                Prompt("Введите b2")};
 
 if(angle[1] != angle[0])
 {
     double[] point = new double[2];
-    point[0] = (double)(offset[1] - offset[0])/(double)(angle[0] - angle[1]);
-    point[1] = (double)angle[0]*point[0] + (double)offset[0];
+    point[0] = (double)(offset[1] - offset[0]) 
+               / (double)(angle[0] - angle[1]);
+    point[1] = (double)angle[0] * point[0] 
+               + (double)offset[0];
+    
     System.Console.WriteLine($"Координаты точки пересечения прямых ({point[0]}, {point[1]})");
 }
 else 
